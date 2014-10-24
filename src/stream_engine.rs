@@ -11,12 +11,12 @@ use std::io::{TcpStream, Reader};
 use std::sync::{RWLock, Arc};
 
 
-static V2_GREETING_SIZE: uint = 12;
-static NO_PROGRESS_LIMIT: uint = 1000;
-static SIGNATURE_SIZE: uint = 10;
-static ZMTP_1_0: u8 = 0;
-static ZMTP_2_0: u8 = 1;
-static REVISION_POS: uint = 10;
+const V2_GREETING_SIZE: uint = 12;
+const NO_PROGRESS_LIMIT: uint = 1000;
+const SIGNATURE_SIZE: uint = 10;
+const ZMTP_1_0: u8 = 0;
+const ZMTP_2_0: u8 = 1;
+const REVISION_POS: uint = 10;
 
 
 fn stream_bytes_writer(chan: Receiver<Box<Vec<u8>>>, mut stream: TcpStream, _waiter: Sender<u8>) {
